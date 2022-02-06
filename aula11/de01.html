@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 14pt Arial;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sua nacionalidade</h1>
+    <p>Em que país você nasceu? <input type="text" name="txtpais" id="txtpais"> <input type="button" value="OK" onclick="nacionalidade()"></p>
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        var res = window.document.getElementById("res")
+
+        function nacionalidade() {
+            var pais = window.document.getElementById("txtpais").value
+            
+            if (pais == "Brasil") {
+                res.innerHTML = "<strong>Brasileiro</strong>"
+            } else {
+                res.innerHTML = "<strong>Estrangeiro</strong>"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

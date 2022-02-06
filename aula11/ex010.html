@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+        }
+        h1 {
+            text-align: center;
+        }
+        p#campo {
+            text-align: center;
+        }
+        input#button_ver {
+            display: block;
+            margin: auto;
+        }
+        div#res {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de <strong>Multas</strong></h1>
+    
+    <p id="campo">Velocidade do carro: <input type="number" name="txtvel" id="txtvel">km/h</p>
+
+    <input type="button" value="Verificar" id="button_ver" onclick="calcular()">
+    <div id="res">
+        Resultado...
+    </div>
+
+    <script>
+        
+        var res = window.document.getElementById("res")
+        
+
+        function calcular() {
+            var campo = window.document.getElementById("txtvel")
+            var vel = campo.value
+
+            if (vel > 60) {
+                res.style.color = "red"
+                res.innerHTML = `Sua velocidade foi ${vel}km/h. Velocidade acima da permitida. <strong>MULTADO!</strong>`
+            } else {
+                res.style.color = "blue"
+                res.innerHTML = `Sua velocidade foi ${vel}km/h. Velocidade dentro do permitido. <strong>NÃO FOI MULTADO!</strong>`
+            }
+            campo.value = 0
+        }  
+
+    </script>
+</body>
+</html>

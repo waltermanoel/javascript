@@ -50,6 +50,6 @@ function verificar () {
         res.style.textAlign = "center"
         res.innerHTML = `Detectamos ${sexo} com ${idade} anos`  
         res.appendChild(img)
-        fAno.value = 0
+        fAno.value = null
     }
 }

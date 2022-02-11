@@ -1,17 +1,21 @@
 function contar () {
-    
 
     var doc = window.document
-    var inicio = Number(doc.getElementById("campoInicio").value)
-    var fim = Number(doc.getElementById("campoFim").value)
-    var passo = Number(doc.getElementById("campoPasso").value)
+    var campoInicio = doc.getElementById("campoInicio")
+    var campoFim = doc.getElementById("campoFim")
+    var campoPasso = doc.getElementById("campoPasso")
+    var inicio = Number(campoInicio.value)
+    var fim = Number(campoFim.value)
+    var passo = Number(campoPasso.value)
     var res = doc.getElementById("res")
 
-    if (passo == 0) {
-        passo = 1
+    if (passo <= 0) {
         window.alert("Passo inválido! Considerando PASSO 1")
+        passo = 1
+        campoPasso.value = 1
     }
-    if (fim.length == null || inicio.length == 0) {
+
+    if (campoFim.value.length == 0 || campoInicio.value.length == 0) {
         res.innerHTML = "Imposível contar!"
     } else {
         var atual = inicio
@@ -22,8 +26,7 @@ function contar () {
 
         res.innerHTML = `Contando: <br>`
 
-        
-        for (atual; atual >= fim && inicio > fim || atual <= fim && inicio < fim; atual += passo){
+        for (atual; atual >= fim && inicio > fim || atual <= fim && inicio < fim || fim == inicio && atual == inicio; atual += passo){
             res.innerHTML += `${atual} &#x1F449;`
         }
 

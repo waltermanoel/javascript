@@ -7,22 +7,26 @@ function contar () {
     var passo = Number(doc.getElementById("campoPasso").value)
     var res = doc.getElementById("res")
 
-    if (passo == null || passo == 0) {
+    if (passo == 0) {
         passo = 1
         window.alert("Passo inválido! Considerando PASSO 1")
     }
-
-    var atual = inicio
-
-    if (inicio > fim) {
-        passo *= -1
-        for (atual; atual >= fim; atual = atual + passo){
-            console.log(atual)
-        }
+    if (fim.length == null || inicio.length == 0) {
+        res.innerHTML = "Imposível contar!"
     } else {
-        for (atual; atual <= fim; atual = atual + passo) {
-            console.log(atual)
-        }
-    }
+        var atual = inicio
 
+        if (inicio > fim) {
+            passo *= -1
+        }
+
+        res.innerHTML = `Contando: <br>`
+
+        
+        for (atual; atual >= fim && inicio > fim || atual <= fim && inicio < fim; atual += passo){
+            res.innerHTML += `${atual} &#x1F449;`
+        }
+
+        res.innerHTML += "&#x1F3C1"
+    }
 }

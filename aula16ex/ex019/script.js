@@ -38,9 +38,9 @@ function finalizar () {
         alert("Adicione pelo menos um valor a lista.")
     } else if (!fina) {
         if (nums.length == 1) {
-            res.innerHTML = `<p>Ao todo, temos ${nums.length} número cadastrado.</p>`
+            res.innerHTML += `<p>Ao todo, temos ${nums.length} número cadastrado.</p>`
         } else {
-        res.innerHTML = `<p>Ao todo, temos ${nums.length} números cadastrados.</p>`
+        res.innerHTML += `<p>Ao todo, temos ${nums.length} números cadastrados.</p>`
         }
         
         let maior = null

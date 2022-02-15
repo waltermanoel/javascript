@@ -3,7 +3,7 @@ let doc = window.document
 let fina = false
 let res = doc.getElementById("resCom")
 
-function analizar () {
+function adicionar () {
     let campoNum = doc.getElementById("campoNum")
     let num = Number(campoNum.value)
     let vali = true
@@ -30,6 +30,7 @@ function analizar () {
             fina = false
         }
     }
+    campoNum.value = null
 }
 
 function finalizar () {

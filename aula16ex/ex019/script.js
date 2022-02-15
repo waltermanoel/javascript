@@ -2,6 +2,13 @@ let nums = []
 let doc = window.document
 let fina = false
 let res = doc.getElementById("resCom")
+let num = 0
+
+function isNum (num) {
+    if (typeof num  == "number") {
+        return true
+    } else {return false}
+}
 
 function adicionar () {
     let campoNum = doc.getElementById("campoNum")
@@ -9,7 +16,7 @@ function adicionar () {
     let vali = true
     
 
-    if (campoNum.value.length == 0 || num < 1 || num > 100) {
+    if (campoNum.value.length == 0 || num < 1 || num > 100 || isNum(num) == false) {
         vali = false
     } else if (nums.length > 0) {
         for (let pos in nums) {

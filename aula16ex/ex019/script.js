@@ -38,6 +38,7 @@ function adicionar () {
         }
     }
     campoNum.value = null
+    campoNum.focus()
 }
 
 function finalizar () {
